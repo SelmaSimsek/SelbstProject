@@ -49,6 +49,25 @@ public class Homework01 extends JsonPlaceHolderBaseUrl {
         assertTrue(response.body().asString().contains("nesciunt quas odio"));
         assertTrue(response.body().asString().contains("1"));
         assertTrue(response.body().asString().contains("repudiandae veniam quaerat sunt sed"));
+
+
+ response
+                .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("title", equalTo("nesciunt quas odio"))
+                .body("userId", equalTo(1))
+                .body("body",containsString("repudiandae veniam quaerat sunt sed"));
+
+
+        response
+                .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("title", equalTo("nesciunt quas odio")
+                ,"userId", equalTo(1)
+                ,"body",containsString("repudiandae veniam quaerat sunt sed"));
+
     }
 
 

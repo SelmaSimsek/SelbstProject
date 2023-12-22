@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class Get04 extends JsonPlaceHolderBaseUrl {
+public class Get04_RequestSpec extends JsonPlaceHolderBaseUrl {
     @Test
     public void get() {
         //i) Url kurulacak
