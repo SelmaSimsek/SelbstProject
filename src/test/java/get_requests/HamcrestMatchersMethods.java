@@ -52,7 +52,8 @@ public class HamcrestMatchersMethods extends JsonPlaceHolderBaseUrl {
     equalToIgnoringCase(dizi):       Kontrol edilen dizi, belirtilen dizi ile aynıysa geçerlidir (büyük-küçük harf duyarlı değil).
     sameInstance(beklenen):          Kontrol edilen nesne, belirtilen nesneyle aynı örneğe sahipse geçerlidir.
     hasProperty(mülkiyetAdı):       Kontrol edilen nesne, belirtilen isme sahip bir JavaBean özelliğine sahipse geçerlidir.
-        Bunlar, genellikle kullanılan Hamcrest eşleştiricilerin ve yöntemlerin sadece bazılarıdır. Hamcrest, testlerinizde ifadeleri açıklayıcı ve okunabilir hale getirmenize olanak tanıyan zengin bir eşleştirici seti sunar.
+        Bunlar, genellikle kullanılan Hamcrest eşleştiricilerin ve yöntemlerin sadece bazılarıdır.
+        Hamcrest, testlerinizde ifadeleri açıklayıcı ve okunabilir hale getirmenize olanak tanıyan zengin bir eşleştirici seti sunar.
  */
 
     /*

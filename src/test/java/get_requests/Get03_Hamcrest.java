@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 
 public class Get03_Hamcrest {
     /*
@@ -40,6 +41,7 @@ public class Get03_Hamcrest {
                 .statusCode(200)
                 .contentType(ContentType.JSON)
                 .body( "title",equalTo("et itaque necessitatibus maxime molestiae qui quas velit"))
+                .body( "title",is("et itaque necessitatibus maxime molestiae qui quas velit")) // bu da kullnilir ancak önerilmez
                 .body("completed",equalTo(true))
                 .body("userId",equalTo(1));
 

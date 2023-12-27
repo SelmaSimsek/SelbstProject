@@ -37,7 +37,7 @@ public class Get05 extends JsonPlaceHolderBaseUrl {
     public void get() {
        // i) Url kurulacak
         int expectedSize = 200;
-        spec.pathParams("first","todos").accept(ContentType.JSON);
+        spec.pathParam("first","todos").accept(ContentType.JSON);
 
        // ii) Beklenen data belirlenecek
        // iii) Request gönderilip Response alınacak

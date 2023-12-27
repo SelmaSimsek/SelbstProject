@@ -43,7 +43,7 @@ public class Get01 {
 
     }
     @Test
-    public void getTekKullanımlık(){
+    public void getTekKullanimlik(){
         String url = "https://restful-booker.herokuapp.com/booking/10";
 
         given()

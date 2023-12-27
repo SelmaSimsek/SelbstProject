@@ -1,10 +1,16 @@
 package get_requests;
 
 import base_urls.HerOkuAppBaseUrl;
+import com.google.common.collect.Range;
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.Argument;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
+import java.util.List;
+
+import static com.google.common.collect.Range.greaterThan;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.hasItem;
@@ -37,14 +43,16 @@ public class Get06_QueryParams extends HerOkuAppBaseUrl {
         response
                 .then()
                 .statusCode(200)
-                .body("bookingid",hasSize(Matchers.greaterThan(0)))
+                .body("bookingid", hasSize(Matchers.greaterThan(0)))
                 .body(containsString("booking"));
 
 
         //2.yol
         assertEquals(200,response.statusCode());
-        assertTrue(response.asString().contains("booking"));
+        assertTrue(response.asString().contains("bookingId"));
 
 
     }
+
+
 }

@@ -31,8 +31,8 @@ public class Get08 extends PetStoreBaseUrl {
             },
             "name": "Dog",
             "photoUrls": [
-                "www.ornekolacakyadım1.com",
-                "www.ornekolacakyadım2.com"
+                "www.ornekolacakyadim1.com",
+                "www.ornekolacakyadim2.com"
             ],
             "tags": [
                 {

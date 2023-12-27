@@ -1,10 +1,13 @@
 package get_requests;
 
 import base_urls.JsonPlaceHolderBaseUrl;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 
 public class Get04_RequestSpec extends JsonPlaceHolderBaseUrl {
     @Test
@@ -20,5 +23,13 @@ public class Get04_RequestSpec extends JsonPlaceHolderBaseUrl {
         response.prettyPrint();
 
         //iv) Doğrulamalar yapılacak
+        response
+                .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("title",equalTo("et itaque necessitatibus maxime molestiae qui quas velit"))
+                .body( "title",is("et itaque necessitatibus maxime molestiae qui quas velit")) // bu da kullnilir ancak önerilmez
+                .body("completed",equalTo(false))
+                .body("userId",equalTo(2));
     }
 }
