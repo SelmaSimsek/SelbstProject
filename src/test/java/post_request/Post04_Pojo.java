@@ -8,7 +8,7 @@ import pojos.JsonPlaceHolderPojo;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Pos04_Pojo extends JsonPlaceHolderBaseUrl {
+public class Post04_Pojo extends JsonPlaceHolderBaseUrl {
     /*
         Given
            https://jsonplaceholder.typicode.com/todos
@@ -40,9 +40,11 @@ public class Pos04_Pojo extends JsonPlaceHolderBaseUrl {
         // Request----- Response
         Response response = given(spec).body(payLoad).when().post("{first}");
         response.prettyPrint();
+
         // Doğrulamalar yapılır:
         JsonPlaceHolderPojo actualData = response.as(JsonPlaceHolderPojo.class);
         System.out.println("actualData = " + actualData);
+
         assertEquals(201,response.statusCode());
         assertEquals(payLoad.getUserId(),actualData.getUserId());
         assertEquals(payLoad.getTitle(),actualData.getTitle());

@@ -3,14 +3,14 @@ package post_request;
 import base_urls.HerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
+import pojos.BookingDatesPojo;
 import pojos.BookingPojo;
-import pojos.HerOkuAppPojo;
 import pojos.HerOkuRootPojo;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Post05 extends HerOkuAppBaseUrl{
+public class Post05_Pojo extends HerOkuAppBaseUrl{
      /*
          Given
           1)  https://restful-booker.herokuapp.com/booking
@@ -50,14 +50,14 @@ public class Post05 extends HerOkuAppBaseUrl{
     public void post() {
         spec.pathParam("first","booking");
 
-        BookingPojo bookingDates = new BookingPojo("2021-09-21","2021-12-21");
-        HerOkuAppPojo payLoad = new HerOkuAppPojo("Ali","Can",999,
+        BookingDatesPojo bookingDates = new BookingDatesPojo("2021-09-21","2021-12-21");
+        BookingPojo payLoad = new BookingPojo("Ali","Can",999,
                 true,bookingDates,"Breakfast");
 
         Response response = given(spec).body(payLoad).when().post("{first}");
         response.prettyPrint();
 
-         HerOkuRootPojo actualData =response.as(HerOkuRootPojo.class);
+        HerOkuRootPojo actualData =response.as(HerOkuRootPojo.class);
 
         assertEquals(200,response.statusCode());
         assertEquals(payLoad.getFirstname(),actualData.getBooking().getFirstname());
