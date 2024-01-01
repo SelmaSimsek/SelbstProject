@@ -8,8 +8,8 @@ import static io.restassured.RestAssured.given;
 public class HerOkuAppAuthentication {
     public static String generateToken() {
         String credential = "{\n" +
-                "   \"username\" :  \"admin\",\n + " +
-                "   \"password\" :  \"password123\"\n" +
+                "    \"username\" : \"admin\",\n" +
+                "    \"password\" : \"password123\"\n" +
                 "}";
 
         Response response = given().

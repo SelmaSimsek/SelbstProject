@@ -10,26 +10,27 @@ import static org.junit.Assert.assertEquals;
 
 public class C05DeleteBooking extends HerOkuAppBaseUrl {
     /*
-   Given
-       https://restful-booker.herokuapp.com/booking/:id
-   When
-       Send get request
-   Then
-       Status code is 404
-   And
-       Body is "Not Found"
-    */
+    Given
+        https://restful-booker.herokuapp.com/booking/:id
+    When
+        Send delete request
+    Then
+        Status code is 201
+    And
+        Body should be : "Created"
+     */
     @Test
     public void confirmDeleteTest() {
         spec.pathParams("first","booking","seconds", bookingid);
 
-        String expectedData = "Not Found";
+        String expectedData = "Created";
 
-        Response response=given(spec).when().delete("{first}/{second}");
+
+        Response response = given(spec).when().delete("{first}/{second}");
         response.prettyPrint();
 
         String actualData = response.asString();
-            assertEquals(404,response.statusCode());
+            assertEquals(201,response.statusCode());
             assertEquals(expectedData,actualData);
 
 

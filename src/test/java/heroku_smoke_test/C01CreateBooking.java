@@ -12,30 +12,32 @@ import static org.junit.Assert.assertEquals;
 
 public class C01CreateBooking extends HerOkuAppBaseUrl {
     /*
-    Test Case: Booking olusturma
     Given
         https://restful-booker.herokuapp.com/booking
     And
         {
-    "firstname" : "Jim",
-    "lastname" : "Brown",
+    "firstname" : "Veli",
+    "lastname" : "Can",
     "totalprice" : 111,
     "depositpaid" : true,
     "bookingdates" : {
         "checkin" : "2018-01-01",
         "checkout" : "2019-01-01"
     },
-    "additionalneeds" : "Breakfast"
+    "additionalneeds" : "Koy Kahvaltısı"
 }
-    When
-        user send Post request
-    Then
-        validates Status Code is 200
-    And
-        {
-    "bookingid": 1,
+     When
+        Send post request
+
+     Then
+        Status code is 200
+
+     And
+        Body:
+      {
+    "bookingid": 1046,
     "booking": {
-        "firstname": "Ali",
+        "firstname": "Veli",
         "lastname": "Can",
         "totalprice": 111,
         "depositpaid": true,
@@ -43,10 +45,10 @@ public class C01CreateBooking extends HerOkuAppBaseUrl {
             "checkin": "2018-01-01",
             "checkout": "2019-01-01"
         },
-        "additionalneeds": "Kahvalti"
+        "additionalneeds": "Koy Kahvaltısı"
     }
 }
-     */
+*/
 
     public static int bookingid;
     @Test

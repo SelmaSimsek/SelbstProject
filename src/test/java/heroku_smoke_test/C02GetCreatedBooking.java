@@ -11,28 +11,25 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class C02GetCreatedBooking extends HerOkuAppBaseUrl {
-        /*
-    Test Case: Booking okuma
+         /*
     Given
-        https://restful-booker.herokuapp.com/booking/id
+        https://restful-booker.herokuapp.com/booking/:id
     When
-        user send get request
+        Send get request
     Then
-        validates Status Code is 200
+        Status code is 200
     And
-        {
-    "bookingid": 1,
-    "booking": {
-        "firstname": "Ali",
-        "lastname": "Can",
-        "totalprice": 111,
-        "depositpaid": true,
-        "bookingdates": {
-            "checkin": "2018-01-01",
-            "checkout": "2019-01-01"
-        },
-        "additionalneeds": "Kahvalti"
-    }
+        Body:
+            {
+    "firstname": "Veli",
+    "lastname": "Can",
+    "totalprice": 111,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+    },
+    "additionalneeds": "Koy Kahvaltısı"
 }
      */
 

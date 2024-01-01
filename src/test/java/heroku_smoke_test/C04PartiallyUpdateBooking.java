@@ -16,30 +16,30 @@ import static org.junit.Assert.assertEquals;
 public class C04PartiallyUpdateBooking extends HerOkuAppBaseUrl {
 
     /*
-   Test Case: Booking güncelleme
    Given
-       https://restful-booker.herokuapp.com/booking/id
+       https://restful-booker.herokuapp.com/booking/:id
    And
-       "firstname": "Naz",
-       "lastname": "Canan",
-        "additionalneeds": "Cay"
+       {
+   "firstname" : "Naz",
+   "lastname" : "Canan",
+   "additionalneeds" : "Çay"
+}
    When
-       user send patch request
+       Send  patch request
    Then
-       validates Status Code is 200
+       Status code is 200
    And
-      Body
-    {
-       "firstname": "Naz",
-       "lastname": "Canan",
-       "totalprice": 111,
-       "depositpaid": true,
-       "bookingdates": {
-           "checkin": "2018-01-01",
-           "checkout": "2019-01-01"
-       },
-       "additionalneeds": "Cay"
-   }
+      Body:
+{
+   "firstname": "Naz",
+   "lastname": "Canan",
+   "totalprice": 111,
+   "depositpaid": true,
+   "bookingdates": {
+       "checkin": "2018-01-01",
+       "checkout": "2019-01-01"
+   },
+   "additionalneeds": "Çay"
 }
     */
     @Test

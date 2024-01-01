@@ -22,13 +22,13 @@ public class HerOkuAppTestData {
         if (lastname!=null) {
             map.put("lastname", lastname);
         }
-        if (lastname!=null) {
+        if (totalprice!=null) {
             map.put("totalprice", totalprice);
         }
-        if (lastname!=null) {
+        if (depositpaid!=null) {
             map.put("depositpaid", depositpaid);
         }
-        if (lastname!=null) {
+        if (bookingdates!=null) {
             map.put("bookingdates", bookingdates);
         }
         if (additionalneeds!=null) {

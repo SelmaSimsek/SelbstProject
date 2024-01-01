@@ -11,53 +11,29 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class C06GetDeletedBooking extends HerOkuAppBaseUrl {
-        /*
-    Test Case: Booking okuma
+       /*
     Given
-        https://restful-booker.herokuapp.com/booking/id
+        https://restful-booker.herokuapp.com/booking/:id
     When
-        user send get request
+        Send get request
     Then
-        validates Status Code is 200
+        Status code is 404
     And
-        {
-    "bookingid": 1,
-    "booking": {
-        "firstname": "Ali",
-        "lastname": "Can",
-        "totalprice": 111,
-        "depositpaid": true,
-        "bookingdates": {
-            "checkin": "2018-01-01",
-            "checkout": "2019-01-01"
-        },
-        "additionalneeds": "Kahvalti"
-    }
-}
+        Body is "Not Found"
      */
 
     @Test
-    public void getCreatedBookingTest() {
-        spec.pathParams("first", "booking","second",bookingid);
+    public void confirmDeleteTest(){
+        spec.pathParams("first","booking","second",bookingid);
 
-        BookingDatesPojo bookingsDates = new BookingDatesPojo("2018-01-01", "2019-01-01");
-        BookingPojo expectedData = new BookingPojo("Ali", "Can", 111,
-                true, bookingsDates, "Kahvalti");
+        String expectedData = "Not Found";
 
         Response response = given(spec).when().get("{first}/{second}");
         response.prettyPrint();
 
-        BookingPojo actualData = response.as(BookingPojo.class);
-
-        assertEquals(200, response.statusCode());
-        assertEquals(expectedData.getFirstname(), actualData.getFirstname());
-        assertEquals(expectedData.getLastname(), actualData.getLastname());
-        assertEquals(expectedData.getTotalprice(), actualData.getTotalprice());
-        assertEquals(expectedData.getDepositpaid(), actualData.getDepositpaid());
-        assertEquals(expectedData.getBookingdates().getCheckin(), actualData.getBookingdates().getCheckin());
-        assertEquals(expectedData.getBookingdates().getCheckout(), actualData.getBookingdates().getCheckout());
-        assertEquals(expectedData.getAdditionalneeds(), actualData.getAdditionalneeds());
-
-
+        String actualData = response.asString();
+        assertEquals(404,response.statusCode());
+        assertEquals(expectedData,actualData);
     }
+
 }
